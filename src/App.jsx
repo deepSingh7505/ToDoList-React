@@ -79,14 +79,13 @@ function App() {
           <button onClick={handleadd} className='bg-violet-800 hover:bg-violet-950 p-2 py-1 text-sm font-bold text-white rounded-full mx-3'>Save</button>
           </div>
         </div>
-        <input type="checkbox" checked={showFinished} onClick={togglefinshied}  name="" id="" />Show Finished
+        <input className='my-3 mx-1' type="checkbox" checked={showFinished} onChange={togglefinshied}  name="" id="" />Show Finished
         <hr />
-       <h2 className='text-lg font-bold'>  Your Todos</h2>
+       <h2 className='text-lg font-bold my-2'> Your Todos :</h2>
         <div className="todos">
-          {todos.length===0 && <span className='rounded-full  bg-sky-600 p-1'>No Todo In List</span>}
+          {todos.length===0 && <span>No Todo In List</span>}
          
-         { todos.map(item => {
-
+         {todos.map(item => {
             return (showFinished || !item.iscompleted) && <div key={item.id} id={item.id} className="todo flex my-3  justify-between p-2 rounded-md">
             <div className='flex'>
               <input type="checkbox" onChange={handlecheakbox} checked={item.iscompleted} name={item.id} className='mx-2' />
